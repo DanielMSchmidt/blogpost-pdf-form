@@ -1,6 +1,6 @@
 # Rebuilding a PDF Form with React Native
 
-A few weeks ago a friend of mine had to struggle with a PDF form he often uses, and it's crappy user experience on his iPhone.
+A few weeks ago a friend of mine had to struggle with a PDF form he often uses and it's crappy user experience on his iPhone.
 I thought I could do better with React Native and became interested in the idea of rebuilding the functionality and how this may be achieved with the current ecosystem.
 The specs were clear:
 
@@ -83,11 +83,20 @@ RNHTMLtoPDF.convert(options).then(filePath => {
     url: filePath,
     subject: "I am only visible for emails :(",
   });
-
 });
 ```
 
 The `Share` object we use here comes from [react-native-share](https://github.com/EstebanFuentealba/react-native-share) and opens the native share panel.
 As I first approached this part of the problem, I thought this could get quite hard, but it was super nicely solved by react-native-share.
 
-The final solution without any styling looks like this: http://i.imgur.com/8knwbGB.png
+The final solution without any styling looks like this:
+![Image of the final solution](http://i.imgur.com/8knwbGB.png)
+
+## Conclusion
+
+The awesome open source community around React Native enabled me to rebuild a PDF form as Android and iOS App.
+It took a relatively small amount of code to do so, and I could have built the solution in under an hour if I already knew all these libraries.
+If I were to scale this solution for a real app, I would think about using something else then regular template strings to build the markup.
+It would be super cool to use React here, if you would like to see a demo implementation, please let me know in the comments.
+I am only looking for an excuse to do this, give me one!
+Also, I was suprised at how easy it was to include images in the PDF; I initially thought this would be more of a hassle.
